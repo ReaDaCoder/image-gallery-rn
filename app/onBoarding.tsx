@@ -1,10 +1,13 @@
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, Button,Alert } from 'react-native';
 import {SymbolView} from 'expo-symbols';
+import {} from 'expo-media-library';
+import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
 export default function onBoardingScreen() {
+  
   return (
     <View style={styles.container}>
        <Text style={styles.title}>Gallery</Text>
@@ -16,6 +19,11 @@ export default function onBoardingScreen() {
       <Text style={styles.perm}>Camera Permissions:</Text>
       <Text>For taking pictures</Text>
       <Text>Allow Location</Text>
+      <Button
+            title="Allow"
+            onPress={() => Alert.alert('Left button pressed')}
+            color="#E8505C"
+          />
       {/* <EditScreenInfo path="app/(tabs)/index.tsx" /> */}
     </View>
   );
